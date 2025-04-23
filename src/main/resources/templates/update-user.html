@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Demo Spring MVCo</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+<nav th:replace="~{app_nav :: nav}"></nav>
+
+<br><br><br><br>
+<div>
+    <div th:if="${param.email_invalid}">
+        <div class="alert alert-danger">
+            Ten adres email został już zarejestrowany!</div>
+    </div>
+    <form action="#"
+          th:action="@{/user/update/{id}(id=${edit_user.id})}"
+          th:object="${edit_user}"
+          method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="form-group">
+            <label class="control-label" for="name">
+                Imię i nazwisko </label> <input id="name" class="form-control"
+                                        th:field="*{name}" required
+                                        autofocus="autofocus" />
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}"
+                 th:errors="*{name}">Name Error</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="phoneNumber">
+                Numer telefonu </label> <input id="phoneNumber"
+                                                class="form-control" th:field="*{phoneNumber}"
+                                                required autofocus="autofocus" />
+            <div class="text-danger" th:if="${#fields.hasErrors('phoneNumber')}"
+                 th:errors="*{phoneNumber}">PhoneNumber Error</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="email">
+                Adres email</label> <input id="email"
+                                           class="form-control" th:field="*{email}"
+                                           required autofocus="autofocus" />
+            <div class="text-danger" th:if="${#fields.hasErrors('email')}"
+                 th:errors="*{email}">Price Error</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="password">
+                Hasło</label> <input id="password"  type="password"
+                                     class="form-control" th:field="*{password}"
+                                     required autofocus="autofocus" />
+            <div class="text-danger" th:if="${#fields.hasErrors('password')}"
+                 th:errors="*{password}">Password Error</div>
+        </div>
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Edytuj użytkownika</button>
+        </div>
+    </form>
+</div>
+<input type="hidden" th:name="${_csrf.parameterName}"
+       th:value="${_csrf.token}" />
+</body>
+</html>
