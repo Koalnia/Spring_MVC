@@ -13,7 +13,7 @@ Administrator ma dostęp do edycji oraz usuwania wszystkich kont użytkowników 
 Autoryzacja i autentykacja w aplikacji przeprowadzana jest przez ciasteczka HTTP. 
 Aplikacja wczytuje domyślne wartości do bazy danych, zawierające trzech użytkowników administratorów, siedmiu zwykłych użytkowników oraz trzydzieści ogłoszeń. 
 Aplikacja ustawiona jest, żeby sama usuwała i generowała od nowa strukturę bazy danych oraz jej dane przy każdym  uruchomieniu. 
-W celu zarządzania pakietami projektów Spring używa narzędzia NuGet.
+W celu zarządzania pakietami projektów Spring używa narzędzia Maven.
 Aplikacja zawiera także testy wydajnościowe napisane w technologii k6.
 
 #ENG
