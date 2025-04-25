@@ -1,5 +1,5 @@
 # Spring_MVC
-Aplikacja Spring_MVC, będą projektem aplikacji w architekturze MVC we frameworku Spring oraz silniku szablonów Thymeleaf. 
+Aplikacja Spring_MVC, będąca projektem aplikacji w architekturze MVC we frameworku Spring oraz silniku szablonów Thymeleaf. 
 Jest to przykład wykorzystania frameworku Spring jako frameworku tworzenia backendu aplikacji internetowych, napisany na potrzeby pracy dyplomowej.
 Backend aplikacji napisany jest w Springu, frontend napisany jest w silniku szablonów stron HTML - Thymeleaf, a wybrana baza danych dla projektu to PostgreSQL.
 Aplikacja tworzy serwis ogłoszeń, gdzie użytkownicy mogą zamieszczać ogłoszenia o chęci zakupu, sprzedaży lub darmowego oddania określonych przedmiotów lub usług. 
